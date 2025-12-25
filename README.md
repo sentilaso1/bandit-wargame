@@ -33,3 +33,17 @@ level 7:
 + ssh bandit7@bandit.labs.overthewire.org -p 2220 pass: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
   
 level 8: 
++ cat data.txt | grep "millionth"
++ ssh bandit8@bandit.labs.overthewire.org -p 2220 pass: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+level 9:
++ sort data.txt | uniq -u
++ ssh bandit9@bandit.labs.overthewire.org -p 2220 pass: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+level 10: 
++ strings data.txt | grep -E '=+'
++ ssh bandit10@bandit.labs.overthewire.org -p 2220 pass: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+level 11:
++ cat data.txt | base64 -d
++ ssh bandit11@bandit.labs.overthewire.org -p 2220 pass: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
