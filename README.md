@@ -47,3 +47,30 @@ level 10:
 level 11:
 + cat data.txt | base64 -d
 + ssh bandit11@bandit.labs.overthewire.org -p 2220 pass: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+level 12:
++ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
++ ssh bandit12@bandit.labs.overthewire.org -p 2220 pass: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+level 13:
++ workdir=$(mktemp -d) | cd "$workdir"
++ cp ~/data.txt . | mv data.txt data.hex | xxd -r data.hex data.bin
++ loop command: file data ->
+- gzip: mv data.bin data.gz | gunzip data.gz
+- bzip2: mv data.bin data.bz2 | bunzip2 data.bz2
+- tar: tar -xf data.bin
++ ssh bandit13@bandit.labs.overthewire.org -p 2220 pass: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+level 14:
++ clone sshkey.private
++ chmod 600 sshkey.private
++ ssh bandit14@bandit.labs.overthewire.org -p 2220 -i sshkey.private
++ ssh bandit14@bandit.labs.overthewire.org -p 2220 pass: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+level 15: 
++ nc localhost 30000 < /etc/bandit_pass/bandit14
++ ssh bandit15@bandit.labs.overthewire.org -p 2220 pass: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+level 16:
++ printf "%s\n" "$(cat /etc/bandit_pass/bandit15)" | openssl s_client -connect localhost:30001 -quiet
++ ssh bandit16@bandit.labs.overthewire.org -p 2220 pass: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
